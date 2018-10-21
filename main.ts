@@ -101,8 +101,8 @@ namespace lcd2004 {
     //% weight=3
     export function set_backlight(on: on_off): void {
         if (on == 1)
-            //BK = 0x08
-            BK = 0x80
+            BK = 0x08
+            
         else
             BK = 0x00
         setcmd(0x00)
