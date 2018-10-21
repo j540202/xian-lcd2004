@@ -33,7 +33,7 @@ namespace lcd1602 {
     function setdat(dat: number): void {
         RS = 1
         send(dat)
-        send(dat << 4)
+        send(dat << 8)
     }
 
     export enum I2C_ADDR {
