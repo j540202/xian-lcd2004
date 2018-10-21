@@ -3,7 +3,7 @@
 */
 
 //% weight=0 color=#794044 icon="\uf108" block="LCD1602"
-namespace lcd1602 {
+namespace lcd2004 {
     export let LCD_I2C_ADDR = 0x3f
     let buf = 0x00
     //let BK = 0x08
