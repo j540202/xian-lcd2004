@@ -1,6 +1,6 @@
 # LCD2004
 
-這是專為micro:bit提供的LCD2004積木
+BoXian,這是專為micro:bit提供的LCD2004積木
 
 ## License
 
