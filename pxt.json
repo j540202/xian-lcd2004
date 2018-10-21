@@ -1,5 +1,5 @@
 {
-    "name": "LCD2004",
+    "name": "lcd2004",
     "version": "0.0.2",
     "description": "BoXian_專為micro:bit提供的LCD2004積木",
     "license": "MIT",
