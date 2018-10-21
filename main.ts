@@ -18,7 +18,8 @@ namespace lcd2004 {
     }
 
     function send(dat: number): void {
-        let d = dat & 0xF0
+        //let d = dat & 0xF0
+        let d = dat & 0x100
         d |= BK
         d |= RS
         setReg(d)
@@ -101,8 +102,8 @@ namespace lcd2004 {
     //% weight=3
     export function set_backlight(on: on_off): void {
         if (on == 1)
-            BK = 0x08
-            
+            //BK = 0x08
+            BK = 0x80
         else
             BK = 0x00
         setcmd(0x00)
