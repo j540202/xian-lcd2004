@@ -6,7 +6,8 @@
 namespace lcd1602 {
     export let LCD_I2C_ADDR = 0x3f
     let buf = 0x00
-    let BK = 0x08
+    //let BK = 0x08
+    let BK = 0x20
     let RS = 0x00
     let E = 0x04
 
