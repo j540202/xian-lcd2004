@@ -1,5 +1,5 @@
 /**
-* LCD1602顯示器的函數
+* LCD2004顯示器的函數
 */
 
 //% weight=0 color=#794044 icon="\uf108" block="LCD1602"
@@ -142,7 +142,7 @@ namespace lcd1602 {
         }
     }
     //% blockId="LCD_putNumber" block="LCD show number %n|on x:%x|y:%y"
-    //% weight=5 blockExternalInputs=true x.min=0 x.max=15 y.min=0 y.max=1
+    //% weight=5 blockExternalInputs=true x.min=0 x.max=19 y.min=0 y.max=3
     export function putNumber(n: number, x: number, y: number): void {
         putString(n.toString(),x,y)
     }
