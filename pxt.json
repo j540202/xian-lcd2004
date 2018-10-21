@@ -1,7 +1,7 @@
 {
     "name": "lcd2004",
     "version": "0.0.2",
-    "description": "BoXian,,專為micro:bit提供的LCD2004積木",
+    "description": "BoXian_專為micro:bit提供的LCD2004積木",
     "license": "MIT",
     "dependencies": {
         "core": "*"
