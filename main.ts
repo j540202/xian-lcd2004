@@ -131,6 +131,7 @@ namespace lcd1602 {
         if (s.length > 0) {
             let breakPoint = -1
             printChar(s.charCodeAt(0), x, y)
+            printChar(s.charCodeAt(0)3,3)
             if (y == 0)
                 breakPoint = 20 - x
             for (let i = 1; i < s.length; i++) {
