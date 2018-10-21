@@ -6,9 +6,9 @@
 namespace lcd2004 {
     export let LCD_I2C_ADDR = 0x3f
     let buf = 0x00
-    //let BK = 0x08
+    let BK = 0x08
     //let BK = 0x20  //3 line
-    let BK = 0x80  //4 line
+    //let BK = 0x80  //4 line
     let RS = 0x00
     let E = 0x04
 
@@ -18,8 +18,8 @@ namespace lcd2004 {
     }
 
     function send(dat: number): void {
-        //let d = dat & 0xF0
-        let d = dat & 0x100
+        let d = dat & 0xF0
+        //let d = dat & 0x100
         d |= BK
         d |= RS
         setReg(d)
@@ -102,8 +102,8 @@ namespace lcd2004 {
     //% weight=3
     export function set_backlight(on: on_off): void {
         if (on == 1)
-            //BK = 0x08
-            BK = 0x80
+            BK = 0x08
+            //BK = 0x80
         else
             BK = 0x00
         setcmd(0x00)
