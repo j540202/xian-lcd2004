@@ -1,5 +1,5 @@
 /**
-* LCD2004顯示器的函數
+* LCD1602顯示器的函數
 */
 
 //% weight=0 color=#794044 icon="\uf108" block="LCD1602"
@@ -132,7 +132,6 @@ namespace lcd1602 {
         if (s.length > 0) {
             let breakPoint = -1
             printChar(s.charCodeAt(0), x, y)
-            printChar(s.charCodeAt(0)3,3)
             if (y == 0)
                 breakPoint = 20 - x
             for (let i = 1; i < s.length; i++) {
