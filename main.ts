@@ -127,10 +127,15 @@ namespace lcd2004 {
                 a = 0x00
             else if(y==1)
                 a = 0x40
-            else if(y==2)
-                a = 0x14
-            else if(y==3)
-                a = 0x54
+            else if(y==2){
+                //a = 0x14
+                a = 0x13 //顯示於第四行
+            }
+            else if(y==3){
+                //a = 0x54
+                // 6C 第三行起始
+                a = 0x6B //顯示於第三行
+            }
             a += x
             setcmd(a)
         }
