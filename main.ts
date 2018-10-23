@@ -79,14 +79,14 @@ namespace lcd2004 {
         setcmd(0x01)
     }
 
-    //% blockId="LCD_setAddress" block="LCD1602 I2C address %myAddr"
+    //% blockId="LCD_setAddress" block="LCD2004 I2C address %myAddr"
     //% weight=0 blockExternalInputs=true
     export function setAddress(myAddr: I2C_ADDR): void {
         LCD_I2C_ADDR = myAddr
         setI2CAddress()
     }
 
-    //% blockId="LCD_setAddress2" block="LCD1602 I2C address %myAddr"
+    //% blockId="LCD_setAddress2" block="LCD2004 I2C address %myAddr"
     //% weight=7 blockExternalInputs=true
     export function setAddress2(myAddr: number): void {
         LCD_I2C_ADDR = myAddr
