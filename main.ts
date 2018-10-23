@@ -18,8 +18,8 @@ namespace lcd2004 {
     }
 
     function send(dat: number): void {
-        let d = dat & 0xF0
-        //let d = dat & 0x100
+        //let d = dat & 0xF0
+        let d = dat & 0x80
         d |= BK
         d |= RS
         setReg(d)
