@@ -2,7 +2,8 @@
 * LCD1602顯示器的函數
 */
 
-//% weight=0 color=#794044 icon="\uf108" block="LCD1602"
+// % weight=0 color=#794044 icon="\uf108"
+// block="LCD1602"
 namespace lcd2004 {
     export let LCD_I2C_ADDR = 0x3f
     let buf = 0x00
@@ -18,8 +19,8 @@ namespace lcd2004 {
     }
 
     function send(dat: number): void {
-        //let d = dat & 0xF0
-        let d = dat & 0x80
+        let d = dat & 0xF0
+        //let d = dat & 0xC0
         d |= BK
         d |= RS
         setReg(d)
@@ -76,7 +77,7 @@ namespace lcd2004 {
         setcmd(0x0C)
         setcmd(0x06)
         setcmd(0x01)
-    } 
+    }
 
     //% blockId="LCD_setAddress" block="LCD1602 I2C address %myAddr"
     //% weight=0 blockExternalInputs=true
@@ -103,7 +104,7 @@ namespace lcd2004 {
     export function set_backlight(on: on_off): void {
         if (on == 1)
             BK = 0x08
-            //BK = 0x80
+        //BK = 0x80
         else
             BK = 0x00
         setcmd(0x00)
@@ -123,20 +124,31 @@ namespace lcd2004 {
             let a = 0x80
             if (y > 0)
                 a = 0xC0
-            if(y==0)
-                a = 0x00
-            else if(y==1)
-                a = 0x40
-            else if(y==2){
-                //a = 0x14
-                a = 0x14 //顯示於第四行
+
+            if (y == 0) {
+                a = 0xC0
+                a = a + (2 * 20) + x
+                //顯示第一行
             }
-            else if(y==3){
-                //a = 0x54
-                // 6C 第三行起始
-                a = 0x6C //顯示於第三行
+            else if (y == 1) {
+                a = 0xC0
+                a = a + x
+                //顯示第二行
             }
-            a += x
+            else if (y == 2) {
+                a = 0xC0
+                //a = a + (2 * 20) + x - 4
+                a = a + (-2 * 20) + x - 4
+                //顯示第三行
+            }
+            else if (y == 3) {
+                a = 0xC0
+                a = a + 20 + x
+                //顯示第四行
+            }
+            else {
+                a += x
+            }
             setcmd(a)
         }
         setdat(ch)
@@ -146,6 +158,7 @@ namespace lcd2004 {
     //% weight=6 blockExternalInputs=true x.min=0 x.max=19 y.min=0 y.max=3
     export function putString(s: string, x: number, y: number): void {
         if (s.length > 0) {
+            x=0 //關閉x
             let breakPoint = -1
             printChar(s.charCodeAt(0), x, y)
             if (y == 0)
@@ -161,7 +174,7 @@ namespace lcd2004 {
     //% blockId="LCD_putNumber" block="LCD show number %n|on x:%x|y:%y"
     //% weight=5 blockExternalInputs=true x.min=0 x.max=19 y.min=0 y.max=3
     export function putNumber(n: number, x: number, y: number): void {
-        putString(n.toString(),x,y)
+        putString(n.toString(), x, y)
     }
 
 }
