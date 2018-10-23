@@ -6,9 +6,9 @@
 namespace lcd2004 {
     export let LCD_I2C_ADDR = 0x3f
     let buf = 0x00
-    //let BK = 0x08
+    let BK = 0x08
     //let BK = 0x20  //3 line
-    let BK = 0x80  //4 line
+    //let BK = 0x80  //4 line
     let RS = 0x00
     let E = 0x04
 
