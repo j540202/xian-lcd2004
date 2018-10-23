@@ -1,9 +1,9 @@
 /**
-* LCD1602顯示器的函數
+* LCD2004顯示器的函數
 */
 
 // % weight=0 color=#794044 icon="\uf108"
-// block="LCD1602"
+// block="LCD2004"
 namespace lcd2004 {
     export let LCD_I2C_ADDR = 0x3f
     let buf = 0x00
