@@ -123,6 +123,14 @@ namespace lcd2004 {
             let a = 0x80
             if (y > 0)
                 a = 0xC0
+            if(y==0)
+                a = 0x00
+            else if(y==1)
+                a = 0x40
+            else if(y==2)
+                a = 0x14
+            else if(y==3)
+                a = 0x54
             a += x
             setcmd(a)
         }
